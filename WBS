@@ -1,1 +1,41 @@
-
+1. FindIt AI
+│
+├── 1.1 Planeamento
+│   ├── 1.1.1 Definição do problema
+│   ├── 1.1.2 Requisitos
+│   └── 1.1.3 Casos de utilização
+│
+├── 1.2 Interface
+│   ├── 1.2.1 Wireframes
+│   ├── 1.2.2 Página de objetos perdidos
+│   ├── 1.2.3 Página de objetos encontrados
+│   └── 1.2.4 Área de utilizador
+│
+├── 1.3 Backend
+│   ├── 1.3.1 Autenticação
+│   ├── 1.3.2 Gestão de objetos
+│   ├── 1.3.3 Gestão de localizações
+│   └── 1.3.4 Sistema de notificações
+│
+├── 1.4 Inteligência Artificial
+│   ├── 1.4.1 Análise de imagens
+│   ├── 1.4.2 Extração de características
+│   ├── 1.4.3 Comparação de objetos
+│   ├── 1.4.4 Sistema de matching
+│   └── 1.4.5 Pesquisa em linguagem natural
+│
+├── 1.5 Base de Dados
+│   ├── 1.5.1 Utilizadores
+│   ├── 1.5.2 Objetos
+│   ├── 1.5.3 Fotografias
+│   └── 1.5.4 Correspondências
+│
+├── 1.6 Testes
+│   ├── 1.6.1 Testes unitários
+│   ├── 1.6.2 Testes de integração
+│   └── 1.6.3 Testes de IA
+│
+└── 1.7 Entrega
+    ├── 1.7.1 Documentação
+    ├── 1.7.2 README
+    └── 1.7.3 Apresentação
