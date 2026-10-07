@@ -9,4 +9,6 @@ Participantes:
 
 
 Descrição do Projeto:
-  
+
+Uma aplicação para a universidade onde os alunos podem registar objetos perdidos ou encontrados e a IA tenta encontrar correspondências automaticamente.
+
