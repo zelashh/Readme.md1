@@ -1,0 +1,84 @@
+US01 — Registar conta
+Como visitante, quero criar uma conta na aplicação, para poder publicar objetos perdidos e encontrados.
+Critérios de aceitação:
+- Permitir registo com nome, email e palavra-passe.
+- Validar os dados introduzidos.
+- Impedir o registo de emails já existentes.
+
+
+US02 — Iniciar sessão
+Como utilizador registado, quero iniciar sessão, para aceder às funcionalidades da aplicação.
+Critérios de aceitação:
+- Permitir iniciar sessão com email e palavra-passe.
+- Apresentar um erro quando as credenciais são inválidas.
+- Restringir funcionalidades privadas a utilizadores autenticados.
+
+
+US04 — Registar objeto perdido
+
+Como utilizador, quero registar um objeto que perdi, para que outras pessoas me possam ajudar a encontrá-lo.
+Critérios de aceitação:
+Permitir registo com nome, email e palavra-passe.
+- Permitir inserir nome, descrição, cor, local e data da perda.
+- Permitir adicionar uma fotografia.
+- Guardar o anúncio na base de dados.
+
+
+US05 — Registar objeto encontrado
+Como utilizador, quero registar um objeto que encontrei, para que o seu proprietário o possa recuperar.
+Critérios de aceitação:
+Permitir registo com nome, email e palavra-passe.
+- Permitir inserir descrição, cor, local e data em que foi encontrado.
+- Permitir adicionar uma fotografia.
+- Disponibilizar o anúncio para pesquisa e comparação.
+
+
+US06 — Pesquisar objetos
+Como utilizador, quero pesquisar objetos perdidos e encontrados, para identificar publicações relevantes.
+Critérios de aceitação:
+- Apresentar os anúncios disponíveis.
+- Permitir pesquisar por nome ou descrição.
+- Permitir filtrar por tipo de objeto e localização.
+- Informar quando não existem resultados.
+
+
+US08 — Analisar fotografias com IA
+Como utilizador, quero que a Inteligência Artificial analise a fotografia de um objeto, para identificar automaticamente características relevantes.
+Critérios de aceitação:
+- Permitir enviar uma fotografia.
+- A IA deve tentar identificar o tipo e a cor do objeto.
+- Apresentar as características identificadas ao utilizador.
+- Permitir preencher os dados manualmente caso a análise falhe.
+
+
+US09 — Encontrar correspondências com IA
+Como utilizador, quero que a IA compare objetos perdidos e encontrados, para identificar possíveis correspondências automaticamente.
+Critérios de aceitação:
+- Comparar características dos anúncios.
+- Apresentar os objetos potencialmente correspondentes.
+- Ordenar os resultados por semelhança.
+- Permitir consultar os detalhes dos anúncios sugeridos.
+
+
+US11 — Receber notificações
+Como utilizador, quero receber uma notificação quando existir uma possível correspondência com o meu objeto, para saber que pode ter sido encontrado.
+Critérios de aceitação:
+- Criar uma notificação quando é identificada uma correspondência relevante.
+- Apresentar a notificação dentro da aplicação.
+- Permitir abrir o anúncio correspondente.
+
+
+US12 — Contactar outro utilizador
+Como utilizador, quero contactar a pessoa associada a uma possível correspondência, para combinar a devolução do objeto.
+Critérios de aceitação:
+- Disponibilizar uma forma simples de contacto.
+- Permitir enviar uma mensagem relacionada com o objeto.
+- Proteger os dados pessoais dos utilizadores.
+
+
+US13 — Marcar objeto como recuperado
+Como autor de um anúncio, quero marcar o objeto como recuperado, para indicar que o problema foi resolvido.
+Critérios de aceitação:
+- Permitir alterar o estado do anúncio para recuperado.
+- Retirar o anúncio das pesquisas de objetos ativos.
+- Deixar de considerar o anúncio nas novas correspondências.
