@@ -1,1 +1,416 @@
 
+FINDIT AI
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+Plataforma inteligente de objetos perdidos e encontrados
+Engenharia de Software II
+
+Versão: 1.0 — proposta inicial
+Data: 14 de outubro de 2026
+Estado: Rascunho para validação pelo grupo
+Responsáveis: A preencher pelos elementos do grupo
+Plataforma prevista: Aplicação web responsiva
+
+
+1. RESUMO EXECUTIVO
+
+O FindIt AI é uma aplicação web que facilita a recuperação de objetos perdidos em contexto universitário. Os utilizadores podem publicar objetos perdidos ou encontrados, pesquisar anúncios e receber sugestões de correspondência geradas com apoio de Inteligência Artificial (IA).
+
+A IA analisa características como tipo, cor, descrição, local e data para ordenar possíveis correspondências. A aplicação apresenta sugestões, não confirma automaticamente a identidade ou propriedade dos objetos.
+
+A primeira versão (MVP) pretende validar o fluxo completo: criar conta, publicar um anúncio, procurar objetos, obter sugestões de correspondência e contactar o autor de um anúncio de forma controlada.
+
+
+2. CONTEXTO E PROBLEMA
+
+Em espaços universitários, objetos perdidos podem ser comunicados informalmente, em grupos de mensagens, redes sociais ou junto de funcionários. Esta dispersão dificulta a pesquisa, faz com que anúncios relevantes passem despercebidos e torna o processo de recuperação lento.
+
+2.1 Problema a resolver
+Não existe um local centralizado e pesquisável onde a comunidade possa registar objetos perdidos e encontrados e descobrir, de forma assistida, anúncios potencialmente relacionados.
+
+2.2 Proposta de valor
+- Centralizar os anúncios de objetos perdidos e encontrados.
+- Reduzir o esforço de pesquisa manual através de filtros e correspondências assistidas por IA.
+- Notificar os utilizadores quando surgir uma correspondência potencialmente relevante.
+- Facilitar o contacto entre as pessoas envolvidas sem expor desnecessariamente dados pessoais.
+
+
+3. OBJETIVOS DO PRODUTO
+
+- Permitir criar, consultar, editar e encerrar anúncios de objetos perdidos e encontrados.
+- Permitir pesquisar por texto e filtrar por tipo, cor, local e data.
+- Comparar anúncios compatíveis e apresentar uma lista ordenada de possíveis correspondências.
+- Permitir que os utilizadores revejam os resultados e confirmem manualmente uma possível recuperação.
+- Proporcionar uma experiência simples, acessível e utilizável em computador e telemóvel.
+
+3.1 Fora dos objetivos do MVP
+- Garantir que a IA identifica com certeza o proprietário de um objeto.
+- Criar uma aplicação móvel nativa para iOS ou Android.
+- Implementar pagamentos, entregas ou logística de transporte de objetos.
+- Integrar inicialmente com sistemas internos da universidade.
+- Disponibilizar reconhecimento facial ou analisar pessoas nas fotografias.
+
+
+4. UTILIZADORES-ALVO E PERFIS
+
+Utilizador registado
+Necessidades: publicar anúncios, pesquisar, receber alertas e contactar outros utilizadores.
+Permissões principais: criar e gerir os próprios anúncios; consultar anúncios públicos.
+
+Pessoa que perdeu um objeto
+Necessidades: registar o objeto e encontrar anúncios compatíveis.
+Permissões principais: criar anúncio de objeto perdido; consultar correspondências.
+
+Pessoa que encontrou um objeto
+Necessidades: registar o objeto e ajudar o proprietário a recuperá-lo.
+Permissões principais: criar anúncio de objeto encontrado; responder a contactos.
+
+Administrador/moderador
+Necessidades: tratar denúncias e remover conteúdo inadequado.
+Permissões principais: consultar denúncias e moderar anúncios.
+
+
+5. ÂMBITO DO PRODUTO
+
+5.1 Incluído no MVP
+- Registo e início de sessão.
+- Criação de anúncios de objetos perdidos e encontrados com descrição, tipo, cor, local, data e fotografia opcional.
+- Listagem, pesquisa e filtros.
+- Análise assistida por IA de fotografias e/ou descrições, com possibilidade de correção manual.
+- Correspondência entre anúncios perdidos e encontrados, com explicação das características coincidentes.
+- Notificações dentro da aplicação para novas correspondências.
+- Marcação de um anúncio como recuperado/resolvido.
+- Controlo de acesso e proteção básica dos dados pessoais.
+
+5.2 Funcionalidades posteriores
+- Pesquisa em linguagem natural.
+- Mensagens privadas integradas na aplicação.
+- Denúncias e painel de moderação completo.
+- Estatísticas de utilização e avaliação do desempenho da IA.
+- Notificações por email ou push.
+
+
+6. REQUISITOS FUNCIONAIS
+
+RF01 — Registo [Must]
+O sistema deve permitir criar uma conta com nome, email e palavra-passe.
+
+RF02 — Autenticação [Must]
+O sistema deve permitir iniciar e terminar sessão e proteger áreas privadas.
+
+RF03 — Criar anúncio perdido [Must]
+O utilizador autenticado deve poder publicar um objeto perdido com os campos obrigatórios.
+
+RF04 — Criar anúncio encontrado [Must]
+O utilizador autenticado deve poder publicar um objeto encontrado.
+
+RF05 — Fotografias [Must]
+O sistema deve permitir carregar uma fotografia opcional em formatos e tamanhos definidos.
+
+RF06 — Consultar anúncios [Must]
+O sistema deve listar anúncios ativos e apresentar os seus detalhes.
+
+RF07 — Pesquisa e filtros [Must]
+O sistema deve permitir pesquisar por texto e filtrar por tipo, cor, local e data.
+
+RF08 — Análise por IA [Must]
+O sistema deve extrair ou sugerir características a partir da imagem/descrição, permitindo correção manual.
+
+RF09 — Correspondência [Must]
+O sistema deve comparar anúncios perdidos e encontrados e ordenar resultados por relevância.
+
+RF10 — Explicação do resultado [Must]
+O sistema deve mostrar os fatores que contribuíram para uma correspondência sugerida.
+
+RF11 — Notificações [Must]
+O sistema deve informar o utilizador quando surgir uma nova correspondência relevante.
+
+RF12 — Estado do anúncio [Must]
+O autor deve poder marcar um anúncio como recuperado/resolvido.
+
+RF13 — Editar/remover [Should]
+O autor deve poder editar ou remover os próprios anúncios, com confirmação para remoção.
+
+RF14 — Perfil [Should]
+O utilizador deve poder consultar e atualizar os dados editáveis do seu perfil.
+
+RF15 — Pesquisa natural [Could]
+O sistema poderá interpretar uma frase livre e convertê-la em critérios de pesquisa.
+
+RF16 — Contacto privado [Should]
+O sistema poderá disponibilizar um canal de contacto que não exponha publicamente emails ou telefones.
+
+RF17 — Denúncias [Could]
+O utilizador poderá denunciar um anúncio e um administrador poderá analisar a denúncia.
+
+
+7. REQUISITOS NÃO FUNCIONAIS
+
+RNF01 — Segurança
+Palavras-passe devem ser armazenadas com hashing seguro; acessos e permissões devem ser verificados no servidor.
+
+RNF02 — Privacidade
+Recolher apenas os dados necessários; não publicar dados de contacto por defeito; definir política de retenção e eliminação.
+
+RNF03 — Usabilidade
+As tarefas principais devem ser compreensíveis sem formação e funcionar em ecrãs móveis e desktop.
+
+RNF04 — Desempenho
+Como meta inicial, as páginas comuns devem responder em até 2 segundos em condições normais; operações de IA podem demorar mais e devem indicar estado de processamento.
+
+RNF05 — Disponibilidade e erros
+Erros de rede, carregamento ou IA devem ser comunicados claramente, permitindo repetir a operação ou preencher dados manualmente.
+
+RNF06 — Acessibilidade
+Usar labels, contraste adequado, navegação por teclado e texto alternativo para imagens relevantes.
+
+RNF07 — Manutenibilidade
+Separar interface, lógica de negócio, persistência e integração com IA; documentar endpoints e decisões importantes.
+
+RNF08 — Testabilidade
+As funcionalidades críticas devem ter testes unitários e de integração; a correspondência de IA deve ser avaliada com um conjunto de exemplos.
+
+
+8. REQUISITOS E COMPORTAMENTO DA IA
+
+8.1 Objetivo da IA
+A IA serve para ajudar a encontrar anúncios potencialmente relacionados. Não decide quem é o proprietário nem substitui a confirmação humana.
+
+8.2 Dados de entrada
+- Tipo/categoria do objeto e descrição textual.
+- Cor e outras características visíveis ou introduzidas pelo utilizador.
+- Local aproximado e data/hora da perda ou descoberta.
+- Características extraídas da fotografia, quando a análise visual estiver disponível.
+
+8.3 Saída esperada
+- Lista ordenada de anúncios candidatos.
+- Indicador de semelhança ou relevância, claramente apresentado como estimativa e não como probabilidade garantida.
+- Explicação simples dos fatores coincidentes e divergentes.
+- Mensagem clara quando não existem candidatos relevantes ou quando a análise falha.
+
+8.4 Abordagem técnica recomendada
+1. Começar com regras e pontuações simples para tipo, cor, local, data e palavras da descrição.
+2. Adicionar um modelo de embeddings/texto ou visão, se houver tempo e recursos, para comparar descrições ou imagens semanticamente.
+3. Combinar os sinais num ranking e mostrar os fatores que influenciaram a ordenação.
+4. Avaliar o sistema com exemplos rotulados como correspondência/não correspondência e rever falsos positivos e falsos negativos.
+
+Nota: para um projeto académico, uma abordagem híbrida é mais fácil de testar e explicar do que prometer uma IA que reconhece objetos com certeza. Não devem usar dados pessoais desnecessários nem imagens de pessoas.
+
+
+9. USER STORIES PRINCIPAIS
+
+US01 — Como visitante, quero criar uma conta para poder publicar e gerir anúncios. (RF01)
+
+US02 — Como utilizador registado, quero iniciar sessão para aceder às minhas funcionalidades. (RF02)
+
+US04 — Como utilizador, quero publicar um objeto perdido para que outros me ajudem a encontrá-lo. (RF03, RF05)
+
+US05 — Como utilizador, quero publicar um objeto encontrado para ajudar o proprietário a recuperá-lo. (RF04, RF05)
+
+US06 — Como utilizador, quero pesquisar e filtrar anúncios para encontrar objetos relevantes. (RF06, RF07)
+
+US08 — Como utilizador, quero que a IA sugira características da fotografia para facilitar o preenchimento do anúncio. (RF08)
+
+US09 — Como utilizador, quero receber sugestões de correspondência entre anúncios perdidos e encontrados. (RF09, RF10)
+
+US11 — Como utilizador, quero ser notificado sobre novas correspondências relevantes. (RF11)
+
+US13 — Como autor, quero marcar um objeto como recuperado para encerrar o caso. (RF12)
+
+
+10. FLUXOS PRINCIPAIS
+
+10.1 Publicar um objeto perdido
+1. O utilizador inicia sessão.
+2. Seleciona “Registar objeto perdido”.
+3. Preenche tipo, descrição, local e data; pode anexar uma fotografia.
+4. A aplicação valida os dados e, se possível, sugere características com IA.
+5. O utilizador confirma os dados e publica o anúncio.
+6. O sistema guarda o anúncio e procura candidatos entre objetos encontrados ativos.
+
+10.2 Encontrar uma correspondência
+1. Um novo anúncio é publicado ou atualizado.
+2. O sistema compara-o com anúncios ativos do tipo oposto.
+3. Os candidatos são ordenados por relevância.
+4. O utilizador recebe uma notificação se houver uma correspondência acima do limiar definido.
+5. O utilizador consulta os detalhes e contacta o outro autor, se desejar.
+6. Após a devolução, o autor marca o anúncio como recuperado.
+
+
+11. MODELO DE DADOS INICIAL
+
+User
+- id
+- name
+- email
+- password_hash
+- role
+- created_at
+
+ItemReport
+- id
+- owner_id
+- report_type (lost/found)
+- title
+- description
+- category
+- color
+- location_text
+- event_date
+- image_url
+- status
+- created_at
+- updated_at
+
+Match
+- id
+- lost_report_id
+- found_report_id
+- score
+- explanation
+- status
+- created_at
+
+Notification
+- id
+- user_id
+- match_id
+- type
+- read_at
+- created_at
+
+Conversation/Message (fase posterior)
+- conversation: id, participants
+- message: id, conversation_id, sender_id, body, created_at
+
+Report/Flag (fase posterior)
+- id
+- reporter_id
+- item_report_id
+- reason
+- status
+- reviewed_by
+- created_at
+
+A estrutura é preliminar. A equipa deve confirmar cardinalidades, índices, regras de eliminação e se as mensagens fazem parte do MVP antes de fechar o modelo relacional.
+
+
+12. CRITÉRIOS DE SUCESSO E MÉTRICAS
+
+Fluxo principal
+Meta: um utilizador consegue registar-se, publicar um anúncio e consultar resultados sem bloqueios.
+
+Qualidade das sugestões
+Meta: avaliar um conjunto de pelo menos 30 pares de anúncios de teste, registando correspondências corretas e incorretas.
+
+Precisão prática
+Meta exploratória: pelo menos 70% dos primeiros resultados apresentados como relevantes devem ser considerados úteis no conjunto de teste; rever a meta após os primeiros ensaios.
+
+Tratamento de falhas
+Meta: quando a IA falha, o utilizador consegue continuar manualmente.
+
+Usabilidade
+Meta: pelo menos 4 de 5 utilizadores de teste conseguem publicar um anúncio sem ajuda, numa avaliação informal.
+
+As metas são propostas iniciais para um protótipo académico, não garantias de desempenho. Devem ser ajustadas depois de existir um conjunto de dados de teste e de se conhecerem as limitações da solução escolhida.
+
+
+13. RISCOS E MITIGAÇÃO
+
+Risco: Poucos anúncios disponíveis.
+Impacto: A IA tem poucas correspondências úteis.
+Mitigação: Criar dados sintéticos/de demonstração claramente identificados e testar com cenários variados.
+
+Risco: Falsos positivos da IA.
+Impacto: Utilizadores acreditam que encontraram o objeto certo.
+Mitigação: Usar linguagem de sugestão, explicar sinais e exigir confirmação humana.
+
+Risco: Falsos negativos.
+Impacto: Uma correspondência real não aparece.
+Mitigação: Permitir pesquisa manual e ajustar os critérios de ranking.
+
+Risco: Exposição de dados pessoais.
+Impacto: Risco de privacidade e abuso.
+Mitigação: Não mostrar contactos publicamente; limitar acesso e recolher apenas o necessário.
+
+Risco: Abuso ou anúncios falsos.
+Impacto: Perda de confiança na plataforma.
+Mitigação: Autenticação, denúncias e moderação conforme o âmbito.
+
+Risco: Integração de IA demasiado complexa.
+Impacto: Atraso no desenvolvimento.
+Mitigação: Começar com ranking baseado em regras e adicionar modelos avançados apenas depois do MVP funcionar.
+
+Risco: Custos ou limites de serviços externos.
+Impacto: A análise pode falhar ou ficar indisponível.
+Mitigação: Abstrair a integração, limitar chamadas e oferecer preenchimento manual.
+
+
+14. PRESSUPOSTOS E DEPENDÊNCIAS
+
+- A primeira versão é uma aplicação web responsiva.
+- O contexto inicial é uma comunidade universitária, sem integração institucional obrigatória.
+- A equipa terá acesso a uma base de dados e a um serviço ou biblioteca para a funcionalidade de IA, se necessário.
+- A utilização de serviços externos de IA depende da respetiva licença, custo, política de privacidade e disponibilidade.
+- Os anúncios e imagens devem respeitar as regras da instituição e a legislação aplicável em matéria de proteção de dados.
+
+
+15. PLANO DE ENTREGA SUGERIDO
+
+Fase 1 — Descoberta
+Entregas: requisitos, personas, user stories, wireframes e arquitetura inicial.
+Resultado esperado: âmbito validado pelo grupo.
+
+Fase 2 — Base funcional
+Entregas: autenticação, criação/consulta de anúncios e pesquisa básica.
+Resultado esperado: fluxo de objetos funcional sem IA avançada.
+
+Fase 3 — IA
+Entregas: extração de características e ranking de correspondências.
+Resultado esperado: sugestões explicáveis e avaliáveis.
+
+Fase 4 — Integração
+Entregas: notificações, estado de recuperação, testes e correções.
+Resultado esperado: fluxo principal integrado.
+
+Fase 5 — Entrega
+Entregas: documentação, README, demonstração e apresentação.
+Resultado esperado: versão demonstrável e documentada.
+
+
+16. CRITÉRIOS DE CONCLUSÃO DO MVP
+
+- Os utilizadores conseguem registar-se e iniciar sessão.
+- Os utilizadores autenticados conseguem criar anúncios perdidos e encontrados.
+- Os anúncios podem ser consultados e filtrados.
+- A aplicação apresenta sugestões de correspondência para anúncios compatíveis.
+- Os resultados de IA são apresentados como estimativas e podem ser revistos por uma pessoa.
+- O utilizador recebe uma notificação interna de uma correspondência relevante.
+- Um anúncio pode ser marcado como recuperado.
+- Os fluxos principais têm testes e instruções de execução documentadas no README.
+- Não existem erros críticos conhecidos que impeçam a demonstração do fluxo principal.
+
+
+17. GLOSSÁRIO
+
+PRD: Documento que descreve o problema, objetivos, utilizadores, âmbito e requisitos do produto.
+
+MVP: Versão mínima utilizável para validar a proposta de valor.
+
+User Story: Descrição de uma necessidade do ponto de vista do utilizador.
+
+Correspondência/Match: Sugestão de que um anúncio de objeto perdido pode estar relacionado com um objeto encontrado.
+
+IA: Técnicas que ajudam a analisar descrições/imagens e a ordenar possíveis correspondências.
+
+Critério de aceitação: Condição verificável que indica quando uma história ou requisito está satisfeito.
+
+
+18. DECISÕES A VALIDAR PELO GRUPO
+
+- Nome final do produto e público-alvo exato.
+- Tecnologias a utilizar no frontend, backend e base de dados.
+- Se a análise de imagens entra no MVP ou se a primeira versão compara apenas texto e metadados.
+- Como será calculada e avaliada a pontuação de correspondência.
+- Se as mensagens privadas e a moderação entram na primeira entrega.
+- Regras de conservação e eliminação de anúncios e fotografias.
+- Responsáveis, estimativas e calendário de cada entrega.
